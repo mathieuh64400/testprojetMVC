@@ -1,0 +1,8 @@
+body {
+    background-color: #4a2abb;
+}
+
+.chart {
+    width: 900px; height: 800px;
+    transform: rotate(180deg);
+}
