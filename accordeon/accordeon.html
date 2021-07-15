@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" width="device-width, initial-scale=1">
+    <title>CSS3 Accordion FAQs</title>
+
+    <style>
+        body {
+            background: #333333;
+        }
+
+
+        /* STYLE THE ACCORDION HOLDING CONTAINER */
+        .accordionbox {
+            max-width: 480px;
+            margin: 100px auto 0px auto;
+            z-index: 2;
+        }
+
+        /* STYLE THE CHECKBOX LABELS */
+        .accordionbox label {
+            font-family: 'PT Sans Narrow', sans-serif;
+            padding: 10px;
+            position: relative;
+            display: block;
+            cursor: pointer;
+            color: #111111;
+            font-size: 18px;
+            background: #FFC728;
+            border-bottom: 2px solid #EFA202;
+            transition: all 0.3s ease;
+        }
+
+        /* STYLE THE CHECKBOX LABELS ON HOVER */
+        /* .accordionbox label:hover {
+            background: #F3F1EE;
+        } */
+
+        /* HIDE THE HTML CHECKBOX SQUARE */
+        .accordionbox input {
+            display: none;
+        }
+
+        /* STYLE THE INITIAL DROPDOWN CONTENT BOX */
+        .insidebox {
+            height: 0px;
+            padding: 0px 15px;
+            font-size: 13px;
+            font-family: 'PT Sans', sans-serif;
+            color: #111111;
+            background: #ffffff;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+
+        /* STYLE THE CLICKED DROPDOWN CONTENT BOX */
+        .accordionbox input:checked~.insidebox {
+            height: 250px;
+            overflow: scroll;
+        }
+
+
+        /* SHOW THE + SIGN WHEN BOXES ARE CLOSED */
+        input[type=checkbox]+label::before {
+            content: "+ ";
+        }
+
+
+        /* SHOW THE – SIGN WHEN BOXES ARE OPEN */
+        input[type=checkbox]:checked+label::before {
+            content: "– ";
+        }
+
+
+        /* THIS IS ADDITIONAL PAGE STYLING, NOT RELATED TO THE ACCORDION */
+       /* a.appbtn {
+             font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+            width: 90%;
+            padding: 13px;
+            text-align: center;
+            background: #263238;
+            color: #FFFFFF;
+            margin: 20px auto;
+            transition: all 0.3s ease;
+        } */
+
+        /* a.appbtn:hover {
+            background: #5FCF80;
+
+        } */
+/* 
+
+        .applicationbox {
+            position: relative;
+            display: inline-block;
+            background: #263238;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            max-width: 100px;
+            margin: 10px;
+        }
+
+        .applicationbox1 {
+            position: relative;
+            display: inline-block;
+            background: #263238;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            max-width: 100px;
+            margin: 10px;
+        }
+
+        .applicationbox::after {
+            position: absolute;
+            width: 0;
+            height: 0;
+            content: '';
+            top: 50%;
+            left: 100%;
+            border-top: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #263238;
+            margin-top: -10px;
+        } */
+
+        /* .copyright {
+            font-size: 9px;
+            font-family: 'Roboto', sans-serif;
+            color: #cccccc;
+            text-align: center;
+        }
+
+        .pagetitle {
+            position: absolute;
+            top: 40px;
+            left: 30px;
+            color: #ffffff;
+            font-size: 32px;
+            line-height: 0.5;
+            font-family: 'Baskerville', serif;
+            ;
+            font-weight: 200;
+            z-index: 2;
+            opacity: 0.5;
+            letter-spacing: 0.01em;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        } */
+    </style>
+</head>
+
+
+
+<body>
+    <!-- <div class="pagetitle">Graduate Admissions<br /><span style="font-size: 9px; letter-spacing: 0.02em;">DEPARTMENT OF
+            ASTRONOMY AND GEOPHYSICAL SCIENCES</span></div> -->
+
+
+
+    <div class="accordionbox">
+        <div>
+            <input id="tab-one" name="myaccordion" type="checkbox" />
+            <label for="tab-one">Application</label>
+            <div class="insidebox">
+                <div style="width: 98%;height: 20%; display: flex;flex-direction: row; background-color: #FFC728; margin-top: 5%;padding-left: 2%;
+                ">
+                    <p> Userstorie N°i: loreme Ipsum</p> <p style="margin-left: 2% ;margin-right: 2%;">|</p> <p>taille: <span>&#x2605;</span> <span>&#x2605;</span> <span>&#x2605;</span></p> <p style="margin-left: 2% ;margin-right: 2%;">|</p> <p> Joueurs:<span> X</span><span> X</span></p>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+        <!-- <div>
+            <input id="tab-two" name="myaccordion" type="checkbox" />
+            <label for="tab-two">Timeline</label>
+            <div class="insidebox">
+                <p>When we have received all your documents and references we can begin to assess your application. In
+                    90% of cases a decision on an application is made within 30 to 45 days, and 65% of cases receive a
+                    decision within 2 weeks. In some cases, where applications include additional checks, the process
+                    may take longer. If this is the case we will notify you within 45 days of receiving your
+                    application, with next steps. A typical application process is illustrated below:</p>
+                <div class="applicationbox">1<br />Application Received<br />(2-3 days)</div>
+                <div class="applicationbox">2<br />Review + Assessement<br />(14-30 days)</div>
+                <div class="applicationbox1">3<br />Decision Communicated<br />(1-2 days)</div>
+            </div>
+        </div>
+
+
+        <div>
+            <input id="tab-three" name="myaccordion" type="checkbox" />
+            <label for="tab-three">Decision</label>
+            <div class="insidebox">
+                <p>A decision on your application is typically made within 30 to 45 days. Once a decision is made, the
+                    admissions office will email you with the outcome. There are three possible outcomes:</p>
+                <p><strong>Unconditional Offers</strong> are made to successful applicants who meet all the requirements
+                    for admission at the application stage. No further steps or interviews are required and the
+                    applicant will generally have to fulfill just the tuition.</p>
+                <p><strong>Conditional Offers</strong> are the most common result of a decision. Applicants with
+                    conditional offers are given provisional admission provided they first meet any outstanding
+                    requirements. These include completion of prior courses, submission of additional documents or
+                    proposals, attendance at an admissions interview, or completion of visa formalities for
+                    international students.</p>
+                <p><strong>Rejections</strong> are usually only served to applicants who the department feels is unable
+                    to fulfill all or most of the requirements of the course. While applicants may appeal against a
+                    rejection, it is unlikely this decision will be overturned since a rejection is only administered
+                    when the department has thoroughly reviewed the applicant's submission and conclude that little
+                    action may be taken by the applicant to rectify any gaps in the application.</p>
+            </div>
+        </div>
+
+        <div>
+            <input id="tab-four" name="myaccordion" type="checkbox" />
+            <label for="tab-four">Department</label>
+            <div class="insidebox">
+                <p>Contact your department representatives for specific queries on your application, or get in touch
+                    with the university general queries office.</p>
+                <p><strong>Dr Tisa Volkorn</strong><br />Department Vice-Chair<br />E: tisa.volkorn@qc.sg<br />T: +44
+                    1234 5678</p>
+                <p><strong>Dr Mido Karla</strong><br />Postgraduate Admissions<br />E: gotham.tungsten@qc.sg<br />T: +44
+                    9876 5432</p>
+                <p><strong>Prof Dekar Lato</strong><br />Senior Tutor<br />E: dekar.lato@qc.sg<br />T: +44 3456 5678</p>
+                <p><strong>Ms Fira Sterling</strong><br />Postgraduate Queries<br />E: fira.sterling@qc.sg<br />T: +44
+                    9887 1123</p>
+            </div>
+        </div>
+
+
+        <div>
+            <input id="tab-five" name="myaccordion" type="checkbox" />
+            <label for="tab-five">Video</label>
+            <div class="insidebox">
+                <p>Making an application using a Mac? Check out this keyboard shortcuts video.</p>
+                <p style="text-align: center;"><iframe class="themovie" width="400" height="225"
+                        src="https://www.youtube.com/embed/C7KjROVwGBQ?controls=1"
+                        allowfullscreen="allowfullscreen"></iframe></p>
+            </div>
+        </div>
+
+
+
+        <p class="copyright">Copyright 2018 © Quantico Communications. All rights reserved.</p> -->
+    <!-- </div> -->
+
+</body>
+
+</html>

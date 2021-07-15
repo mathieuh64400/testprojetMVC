@@ -183,7 +183,7 @@
   [data-side="6"] .dot:nth-of-type(6) {
     grid-area: nine;
   }
-  
+/*   
   button {
     align-self: center;
     background-color: #efefef;
@@ -197,10 +197,10 @@
   button:hover {
     cursor: pointer;
   }
-  
+  */
   @media (min-width: 900px) {
     .dice {
       perspective: 1300px;
     }
-  }
+  } 
   
